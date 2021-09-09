@@ -4,14 +4,7 @@
                 class="ti-menu ti-close"></i></a>
         <div class="navbar-brand">
             <a href="index.html">
-                <b class="logo-icon">
-                    <img src="{{ asset('assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
-                    <img src="{{ asset('assets/images/logo-icon.png') }}" alt="homepage" class="light-logo" />
-                </b>
-                <span class="logo-text">
-                    <img src="{{ asset('assets/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
-                    <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" />
-                </span>
+                <h3>si-<strong>NGADAT</strong></h3>
             </a>
         </div>
         <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
