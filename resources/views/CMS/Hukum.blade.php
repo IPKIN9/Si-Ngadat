@@ -18,21 +18,21 @@
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
                     <div class="card-body">
-                        <form action="{{route('desa.insert')}}" method="POST" autocomplete="off">
+                        <form action="{{route('hukum.insert')}}" method="POST" autocomplete="off">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Nama Desa</label>
-                                        <input type="text" name="nama_desa" class="form-control"
-                                            placeholder="Input Nama Desa">
+                                        <label>Jenis Pelanggaran</label>
+                                        <input type="text" name="jenis_pelanggaran" class="form-control"
+                                            placeholder="Input Jenis Pelanggaran">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Lokasi</label>
-                                        <input type="text" name="lokasi" class="form-control"
-                                            placeholder="Input Lokasi">
+                                        <label>Keterangan</label>
+                                        <input type="text" name="keterangan" class="form-control"
+                                            placeholder="Input Keterangan">
                                     </div>
                                 </div>
                             </div>
@@ -57,16 +57,16 @@
                 @endif
             </div>
             <div class="card-body">
-                <h4 class="card-title pb-2">Tabel Desa</h4>
-                <h6 class="card-subtitle">Semua data yang menyangkut dengan <code>Desa</code> ada pada tabel
+                <h4 class="card-title pb-2">Tabel Hukum</h4>
+                <h6 class="card-subtitle">Semua data yang menyangkut dengan <code>Hukum</code> ada pada tabel
                     ini.</h6>
                 <div class="table-responsive">
                     <table class="table" id="desa_table">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nama Desa</th>
-                                <th scope="col">Lokasi</th>
+                                <th scope="col">Jenis Pelanggaran</th>
+                                <th scope="col">Keterangan</th>
                                 <th scope="col">Created_at</th>
                                 <th scope="col">Updated_at</th>
                                 <th scope="col">Action</th>
@@ -79,8 +79,8 @@
                             @foreach ($data['all'] as $d)
                             <tr>
                                 <td>{{$no++}}</td>
-                                <td>{{$d->nama_desa}}</td>
-                                <td>{{$d->lokasi}}</td>
+                                <td>{{$d->jenis_pelanggaran}}</td>
+                                <td>{{$d->keterangan}}</td>
                                 <td>{{date('d-m-Y', strtotime($d->created_at))}}</td>
                                 <td>{{date('d-m-Y', strtotime($d->updated_at))}}</td>
                                 <td>
@@ -120,20 +120,20 @@
                 $('.modal-title').html('Formulir Perubahan Data');
                 $('.modal-body').html('');
                 $('.modal-body').append(`
-                <form action="{{route('desa.update')}}" method="POST" autocomplete="off">
+                <form action="{{route('hukum.update')}}" method="POST" autocomplete="off">
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Nama Desa</label>
+                            <label>Jenis Pelanggaran</label>
                             <input type="hidden" name="id" id="id" class="form-control" value="`+data.id+`">
-                            <input type="text" name="nama_desa" id="nama_desa" class="form-control" value="`+data.nama_desa+`">
+                            <input type="text" name="jenis_pelanggaran" id="jenis_pelanggaran" class="form-control" value="`+data.jenis_pelanggaran+`">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Lokasi</label>
-                            <input type="text" name="lokasi" id="lokasi" class="form-control" value="`+data.lokasi+`">
+                            <label>Keterangan</label>
+                            <input type="text" name="keterangan" id="keterangan" class="form-control" value="`+data.keterangan+`">
                         </div>
                     </div>
                 </div>

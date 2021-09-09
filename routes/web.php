@@ -30,3 +30,12 @@ Route::group(['prefix' => 'desa'], function() {
     Route::delete('deletespecdata/{id}', 'CMS\DesaController@delete');
 });
 
+Route::group(['prefix' => 'hukum'], function() {
+    Route::get('index', 'CMS\HukumController@index')->name('hukum.index');
+    Route::post('create', 'CMS\HukumController@create')->name('hukum.insert');
+    Route::get('editspecdata/{id}', 'CMS\HukumController@edit');
+    Route::post('updatespecdata', 'CMS\HukumController@update')->name('hukum.update');
+    Route::delete('deletespecdata/{id}', 'CMS\HukumController@delete');
+});
+
+

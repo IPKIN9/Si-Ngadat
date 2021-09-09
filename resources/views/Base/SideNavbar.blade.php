@@ -13,6 +13,9 @@
             <li class="sidebar-item {{ Route::is('desa.index') ? 'selected' : '' }}"> <a
                     class="sidebar-link sidebar-link" href="{{route('desa.index')}}" aria-expanded="false"><i
                         class="icon-check"></i><span class="hide-menu">Desa</span></a></li>
+            <li class="sidebar-item {{ Route::is('hukum.index') ? 'selected' : '' }}"> <a
+                    class="sidebar-link sidebar-link" href="{{route('hukum.index')}}" aria-expanded="false"><i
+                        class="icon-check"></i><span class="hide-menu">Hukum</span></a></li>
             <li class="sidebar-item {{ Route::is('contoh.index') ? 'selected' : '' }}"> <a
                     class="sidebar-link sidebar-link" href="{{route('contoh.index')}}" aria-expanded="false"><i
                         class="icon-check"></i><span class="hide-menu">Contoh</span></a></li>
