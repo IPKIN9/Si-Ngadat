@@ -17,7 +17,6 @@ class CreateDesaTable extends Migration
             $table->id();
             $table->string('nama_desa');
             $table->string('lokasi');
-            $table->foreignId('denda_id')->nullable()->constrained('denda');
             $table->timestamps();
         });
     }

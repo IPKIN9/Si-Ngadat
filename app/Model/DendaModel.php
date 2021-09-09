@@ -11,6 +11,8 @@ class DendaModel extends Model
         'id',
         'kode',
         'denda',
+        'hukum_id',
+        'desa_id',
         'created_at',
         'updated_at'
     ];

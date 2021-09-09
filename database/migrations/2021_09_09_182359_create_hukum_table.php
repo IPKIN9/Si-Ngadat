@@ -17,8 +17,6 @@ class CreateHukumTable extends Migration
             $table->id();
             $table->string('jenis_pelanggaran');
             $table->string('keterangan');
-            $table->foreignId('adat_id')->nullable()->constrained('adat');
-            $table->foreignId('denda_id')->nullable()->constrained('denda');
             $table->timestamps();
         });
     }

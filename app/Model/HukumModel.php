@@ -11,8 +11,6 @@ class HukumModel extends Model
         'id',
         'jenis_pelanggaran',
         'keterangan',
-        'adat_id',
-        'denda_id',
         'created_at',
         'updated_at'
     ];
