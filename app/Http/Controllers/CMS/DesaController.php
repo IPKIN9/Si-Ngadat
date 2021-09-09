@@ -3,56 +3,58 @@
 namespace App\Http\Controllers\CMS;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DendaRequest;
-use App\Model\DendaModel;
+use App\Http\Requests\DesaRequest;
+use App\Model\DesaModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DendaController extends Controller
+class DesaController extends Controller
 {
     public function index()
     {
         $data = array(
-            'all' => DendaModel::all()
+            'all' => DesaModel::all(),
         );
-        return view('CMS/Denda')->with('data', $data);
+        return view('CMS/Desa')->with('data', $data);
     }
 
-    public function create(DendaRequest $request)
+    public function create(DesaRequest $request)
     {
         $date = Carbon::now();
         $data = array(
-            'kode' => $request->kode,
-            'denda' => $request->denda,
+            'nama_desa' => $request->nama_desa,
+            'lokasi' => $request->lokasi,
+            'denda_id' => null,
             'created_at' => $date,
             'updated_at' => $date,
         );
-        DB::table('denda')->insert($data);
+        DB::table('desa')->insert($data);
         return redirect()->back()->with('status', 'Data berhasil Tersimpan');
     }
 
     public function edit($id)
     {
-        $result = DendaModel::where('id', $id)->first();
+        $result = DesaModel::where('id', $id)->first();
         return response()->json($result);
     }
-    public function update(DendaRequest $request)
+    public function update(DesaRequest $request)
     {
         $id = $request->id;
         $date = Carbon::now();
         $data = array(
-            'kode' => $request->kode,
-            'denda' => $request->denda,
+            'nama_desa' => $request->nama_desa,
+            'lokasi' => $request->lokasi,
+            'denda_id' => null,
             'updated_at' => $date,
         );
-        DendaModel::where('id', $id)->update($data);
+        DesaModel::where('id', $id)->update($data);
         return redirect()->back()->with('status', 'Data berhasil diubah');
     }
 
     public function delete($id)
     {
-        DendaModel::where('id', $id)->delete();
+        DesaModel::where('id', $id)->delete();
         return response()->json();
     }
 }

@@ -21,3 +21,12 @@ Route::group(['prefix' => 'denda'], function() {
     Route::post('updatespecdata', 'CMS\DendaController@update')->name('denda.update');
     Route::delete('deletespecdata/{id}', 'CMS\DendaController@delete');
 });
+
+Route::group(['prefix' => 'desa'], function() {
+    Route::get('index', 'CMS\DesaController@index')->name('desa.index');
+    Route::post('create', 'CMS\DesaController@create')->name('desa.insert');
+    Route::get('editspecdata/{id}', 'CMS\DesaController@edit');
+    Route::post('updatespecdata', 'CMS\DesaController@update')->name('desa.update');
+    Route::delete('deletespecdata/{id}', 'CMS\DesaController@delete');
+});
+
