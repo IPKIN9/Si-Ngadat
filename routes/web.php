@@ -38,4 +38,13 @@ Route::group(['prefix' => 'hukum'], function() {
     Route::delete('deletespecdata/{id}', 'CMS\HukumController@delete');
 });
 
+Route::group(['prefix' => 'user'], function() {
+    Route::get('index', 'Auth\UserController@index')->name('user.index');
+    Route::post('create', 'Auth\UserController@create')->name('user.insert');
+    Route::get('editspecdata/{id}', 'Auth\UserController@edit');
+    Route::post('updatespecdata', 'Auth\UserController@update')->name('user.update');
+    Route::delete('deletespecdata/{id}', 'Auth\UserController@delete');
+});
+
+
 

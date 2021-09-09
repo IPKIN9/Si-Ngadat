@@ -29,7 +29,8 @@
                             class="svg-icon mr-2 ml-1"></i>
                         Logout</a>
                     <div class="dropdown-divider"></div>
-                    <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">Management User</a>
+                    <div class="pl-4 p-3"><a href="{{route('user.index')}}" class="btn btn-sm btn-info">Management
+                            User</a>
                     </div>
                 </div>
             </li>
