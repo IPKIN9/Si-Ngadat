@@ -17,6 +17,8 @@ class CreateDendaTable extends Migration
             $table->id();
             $table->string('kode');
             $table->string('denda');
+            $table->foreignId('hukum_id')->constrained('hukum');
+            $table->foreignId('desa_id')->constrained('desa');
             $table->timestamps();
         });
     }
