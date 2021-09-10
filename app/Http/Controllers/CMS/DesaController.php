@@ -25,7 +25,6 @@ class DesaController extends Controller
         $data = array(
             'nama_desa' => $request->nama_desa,
             'lokasi' => $request->lokasi,
-            'denda_id' => null,
             'created_at' => $date,
             'updated_at' => $date,
         );
@@ -45,7 +44,6 @@ class DesaController extends Controller
         $data = array(
             'nama_desa' => $request->nama_desa,
             'lokasi' => $request->lokasi,
-            'denda_id' => null,
             'updated_at' => $date,
         );
         DesaModel::where('id', $id)->update($data);
