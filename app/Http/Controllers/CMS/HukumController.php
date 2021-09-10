@@ -25,8 +25,6 @@ class HukumController extends Controller
         $data = array(
             'jenis_pelanggaran' => $request->jenis_pelanggaran,
             'keterangan' => $request->keterangan,
-            'adat_id' => null,
-            'denda_id' => null,
             'created_at' => $date,
             'updated_at' => $date,
         );
@@ -46,8 +44,6 @@ class HukumController extends Controller
         $data = array(
             'jenis_pelanggaran' => $request->jenis_pelanggaran,
             'keterangan' => $request->keterangan,
-            'adat_id' => null,
-            'denda_id' => null,
             'updated_at' => $date,
         );
         HukumModel::where('id', $id)->update($data);
