@@ -15,11 +15,12 @@ class CreateAdatTable extends Migration
     {
         Schema::create('adat', function (Blueprint $table) {
             $table->id();
-            $table->string('isi_perjanian');
+            $table->string('isi_perjanjian');
             $table->string('keterangan');
             $table->string('ttd');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('desa')->nullable()->constrained('desa');
+            $table->foreignId('desa_id')->nullable()->constrained('desa');
+            $table->foreignId('hukum_id')->nullable()->constrained('hukum');
             $table->timestamps();
         });
     }
