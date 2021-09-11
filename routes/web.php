@@ -2,9 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('Base.Dashboard');
-})->name('home.index');
+Route::prefix('/')->group(function () {
+    Route::get('/', 'CMS\HomeController@index')->name('home.index');
+    Route::get('hukumspecdata', 'CMS\HomeController@hukum');
+    Route::post('pelanggar_post/', 'CMS\HomeController@create')->name('home.create');
+    Route::get('detailspecdata/{id}', 'CMS\HomeController@detail');
+    Route::post('pelanggar_edit', 'CMS\HomeController@update')->name('home.update');
+    Route::delete('deletespecdata/{id}', 'CMS\HomeController@delete');
+});
 
 Route::prefix('Contoh')->group(function () {
     Route::get('index', 'Contoh\ContohController@index')->name('contoh.index');
