@@ -22,10 +22,10 @@ class UserRequest extends FormRequest
     }
     public function messages()
     {
-        return[
+        return [
             'required' => 'Field ini tidak boleh kosong',
             'unique' => 'Username sudah digunakan',
-            'min'=> 'Isi field ini terlalu pendek',
+            'min' => 'Isi field ini terlalu pendek',
             'max' => 'Isi field ini terlalu panjang',
             'confirmed' => 'Password tidak sama'
         ];

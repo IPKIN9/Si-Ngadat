@@ -31,7 +31,8 @@ class UserController extends Controller
             'created_at' => $date,
             'updated_at' => $date,
         );
-        DB::table('users')->insert($data);
+        $admin = User::create($data);
+        $admin->assignRole($request->role);
         return redirect()->back()->with('status', 'Data berhasil Tersimpan');
     }
 
