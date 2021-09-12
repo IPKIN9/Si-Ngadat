@@ -10,6 +10,7 @@ use App\Model\HukumModel;
 use App\Model\PelanggarModel;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -30,12 +31,13 @@ class HomeController extends Controller
 
     public function create(HomeRequest $request)
     {
+        $user_id = Auth::user()->id;
         $date = Carbon::now();
         $data = array(
             'isi_perjanjian' => $request->isi_perjanjian,
             'keterangan' => $request->keterangan,
             'ttd' => $date,
-            'user_id' => 1,
+            'user_id' => $user_id,
             'hukum_id' => $request->hukum_id,
             'desa_id' => $request->desa_id,
             'created_at' => $date,
@@ -67,6 +69,7 @@ class HomeController extends Controller
 
     public function update(HomeRequest $request)
     {
+        $user_id = Auth::user()->id;
         $adat_id = $request->adat_id;
         $pelanggar_id = $request->pelanggar_id;
         $date = Carbon::now();
@@ -74,7 +77,7 @@ class HomeController extends Controller
             'isi_perjanjian' => $request->isi_perjanjian,
             'keterangan' => $request->keterangan,
             'ttd' => $date,
-            'user_id' => 1,
+            'user_id' => $user_id,
             'hukum_id' => $request->hukum_id,
             'desa_id' => $request->desa_id,
             'updated_at' => $date,

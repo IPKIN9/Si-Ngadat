@@ -176,8 +176,8 @@
                 @endif
             </div>
             <div class="card-body">
-                <h4 class="card-title pb-2">Tabel Pelanggar</h4>
-                <h6 class="card-subtitle">Semua data yang menyangkut dengan <code>Contoh</code> ada pada tabel
+                <h4 class="card-title pb-2">Data Kasus</h4>
+                <h6 class="card-subtitle">Semua data yang menyangkut dengan <code>Kasus</code> ada pada tabel
                     ini.</h6>
                 <div class="table-responsive">
                     <table class="table" id="pelanggar_table">
