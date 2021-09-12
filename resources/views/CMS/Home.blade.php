@@ -186,6 +186,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nik</th>
                                 <th scope="col">Nama</th>
+                                <th scope="col">Desa</th>
                                 <th scope="col">Detail</th>
                             </tr>
                         </thead>
@@ -198,6 +199,7 @@
                                 <td>{{$no++}}</td>
                                 <td>{{$d->nik}}</td>
                                 <td>{{$d->nama}}</td>
+                                <td>{{$d->adat_rerol->desa_rerol->nama_desa}}</td>
                                 <td>
                                     <button type="button" data-id="{{$d->id}}" id="detail_button"
                                         class="btn btn-sm btn-success"><i class="far fa-list-alt"></i>
