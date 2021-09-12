@@ -26,6 +26,9 @@
                                         <label>Nama Lengkap</label>
                                         <input type="text" name="nama" class="form-control"
                                             placeholder="Input Nama Lengkap">
+                                        @error('nama')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -33,6 +36,9 @@
                                         <label>Username</label>
                                         <input type="text" name="username" class="form-control"
                                             placeholder="Input Username">
+                                        @error('username')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -42,6 +48,9 @@
                                         <label>Password</label>
                                         <input type="password" name="password" class="form-control"
                                             placeholder="Input Password">
+                                        @error('password')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -49,6 +58,9 @@
                                         <label>Password Confirmation</label>
                                         <input type="password" name="password_confirmation" class="form-control"
                                             placeholder="Input Password Confirmation">
+                                        @error('password_confirmation')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -59,6 +71,9 @@
                                             <option value="admin">Admin</option>
                                             <option value="super_admin">Super Admin</option>
                                         </select>
+                                        @error('role')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -154,6 +169,7 @@
                             <label>Nama Lengkap</label>
                             <input type="hidden" name="id" id="id" class="form-control" value="`+data.id+`">
                             <input type="text" name="nama" id="nama" class="form-control" value="`+data.nama+`">
+                            
                         </div>
                     </div>
                     <div class="col-md-6">
