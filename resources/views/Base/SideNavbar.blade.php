@@ -17,6 +17,9 @@
             <li class="sidebar-item {{ Route::is('hukum.index') ? 'selected' : '' }}"> <a
                     class="sidebar-link sidebar-link" href="{{route('hukum.index')}}" aria-expanded="false"><i
                         class="fas fa-balance-scale"></i><span class="hide-menu">Hukum</span></a></li>
+            <li class="sidebar-item {{ Route::is('tentangkami.index') ? 'selected' : '' }}"> <a
+                    class="sidebar-link sidebar-link" href="{{route('tentangkami.index')}}" aria-expanded="false"><i
+                        class="fas fa-balance-users"></i><span class="hide-menu">Tentang Kami</span></a></li>
             @else
 
             @endif
