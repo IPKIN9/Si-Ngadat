@@ -18,7 +18,6 @@ class CreateAdatTable extends Migration
             $table->string('isi_perjanjian');
             $table->string('keterangan');
             $table->string('ttd');
-            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('desa_id')->nullable()->constrained('desa');
             $table->foreignId('hukum_id')->nullable()->constrained('hukum');
             $table->timestamps();

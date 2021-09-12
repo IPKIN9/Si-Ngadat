@@ -8,7 +8,7 @@ class AdatModel extends Model
 {
     protected $table = 'adat';
     protected $fillable = [
-        'id', 'isi_perjanjian', 'keterangan', 'ttd', 'user_id',
+        'id', 'isi_perjanjian', 'keterangan', 'ttd',
         'desa_id', 'hukum_id', 'created_at', 'updated_at'
     ];
 
