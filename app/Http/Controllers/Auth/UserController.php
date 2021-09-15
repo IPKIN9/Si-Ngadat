@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $data = array(
-            'all' => User::all(),
+            'all' => User::where('role', 'admin')->get(),
         );
         return view('Auth/User')->with('data', $data);
     }

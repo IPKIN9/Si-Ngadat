@@ -13,6 +13,7 @@ Route::middleware('auth')->group(function () {
         Route::get('detailspecdata/{id}', 'CMS\HomeController@detail');
         Route::post('pelanggar_edit', 'CMS\HomeController@update')->name('home.update');
         Route::delete('deletespecdata/{id}', 'CMS\HomeController@delete');
+        Route::post('export/pdf', 'Pdf\EksportController@print_pdf')->name('eksport.pdf');
     });
 
     Route::prefix('Contoh')->group(function () {
@@ -40,15 +41,15 @@ Route::middleware('auth')->group(function () {
         Route::post('updatespecdata', 'CMS\DesaController@update')->name('desa.update');
         Route::delete('deletespecdata/{id}', 'CMS\DesaController@delete');
     });
-    
-    Route::group(['prefix' => 'tentangkami'], function() {
+
+    Route::group(['prefix' => 'tentangkami'], function () {
         Route::get('index', 'CMS\TentangKamiController@index')->middleware('role:super_admin')->name('tentangkami.index');
         Route::post('create', 'CMS\TentangKamiController@create')->name('tentangkami.insert');
         Route::get('editspecdata/{id}', 'CMS\TentangKamiController@edit');
         Route::post('updatespecdata', 'CMS\TentangKamiController@update')->name('tentangkami.update');
         Route::delete('deletespecdata/{id}', 'CMS\TentangKamiController@delete');
     });
-    
+
 
     Route::group(['prefix' => 'hukum'], function () {
         Route::get('index', 'CMS\HukumController@index')->middleware('role:super_admin')->name('hukum.index');

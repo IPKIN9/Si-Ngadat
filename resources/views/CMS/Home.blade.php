@@ -188,6 +188,7 @@
                                 <th scope="col">Nama</th>
                                 <th scope="col">Desa</th>
                                 <th scope="col">Detail</th>
+                                <th scope="col">Cetak</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -207,6 +208,15 @@
                                     <button type="button" data-id="{{$d->id}}" id="delete_button"
                                         class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i>
                                     </button>
+                                </td>
+                                <td>
+                                    <form action="{{route('eksport.pdf')}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="id_pdf" value="{{$d->id}}">
+                                        <button type="submit" id="cetak_button" class="btn btn-sm btn-info"><i
+                                                class="fa fa-print"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
@@ -397,6 +407,15 @@
                 }
             })
         });
+
+        // $(document).on('click', '#cetak_button', function()
+        // {
+        //     let dataId = $(this).data('id');
+        //     let url = "export/pdf/" + dataId;
+        //     $.get(url,function(data){
+        //         console.log(data);
+        //     });
+        // })
     });
 </script>
 @endsection
