@@ -35,7 +35,7 @@
                                             <option value="{{$d->id}}">{{$d->nama_desa}}</option>
                                             @endforeach
                                         </select>
-                                        @error('desa')
+                                        @error('desa_id')
                                         <p class="text-danger">{{ $message }}</p>
                                         @enderror
                                     </div>
@@ -44,9 +44,9 @@
                                     <div class="form-group">
                                         <label>Hukum</label>
                                         <select name="hukum_id" id="hukum_select" class="form-control">
-                                            <option disabled selected>--Pilih--</option>
+                                            <option disabled selected>--Pilih terlebih dahulu DESA--</option>
                                         </select>
-                                        @error('hukum')
+                                        @error('hukum_id')
                                         <p class="text-danger">{{ $message }}</p>
                                         @enderror
                                     </div>

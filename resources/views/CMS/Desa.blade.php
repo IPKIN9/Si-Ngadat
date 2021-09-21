@@ -4,7 +4,9 @@
     <div class="col-lg-12">
 
         <div id="accordion" class="custom-accordion mb-4">
-
+            @if ($errors->any())
+            <p class="text-danger">Periksa Formulir Input Data !</p>
+            @endif
             <div class="card mb-0">
                 <div class="card-header" id="headingOne">
                     <h5 class="m-0">
@@ -26,6 +28,9 @@
                                         <label>Nama Desa</label>
                                         <input type="text" name="nama_desa" class="form-control"
                                             placeholder="Input Nama Desa">
+                                        @error('nama_desa')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -33,6 +38,9 @@
                                         <label>Lokasi</label>
                                         <input type="text" name="lokasi" class="form-control"
                                             placeholder="Input Lokasi">
+                                        @error('lokasi')
+                                        <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>

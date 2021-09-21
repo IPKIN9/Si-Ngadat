@@ -4,7 +4,9 @@
     <div class="col-lg-12">
 
         <div id="accordion" class="custom-accordion mb-4">
-
+            @if ($errors->any())
+            <p class="text-danger">Periksa apakah formulir terisi semua!</p>
+            @endif
             <div class="card mb-0">
                 <div class="card-header" id="headingOne">
                     <h5 class="m-0">
@@ -39,7 +41,8 @@
                             </div>
                             <div class="row pt-4">
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="submit" disabled="true" id="btn_simpan"
+                                        class="btn btn-primary">Simpan</button>
                                 </div>
                             </div>
                         </form>
@@ -118,6 +121,7 @@
 
         $('#desa_selected').change(function()
         {
+            $('#btn_simpan').prop('disabled', false)
             $.get('hukumspecdata',function(data){
                 $('#form_content').html('');
                 $.each(data, function(i,d){
