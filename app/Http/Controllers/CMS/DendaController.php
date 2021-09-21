@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CMS;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DendaRequest;
+use App\Http\Requests\DendaUpdateRequest;
 use App\Model\DendaModel;
 use App\Model\DesaModel;
 use App\Model\HukumModel;
@@ -28,7 +29,7 @@ class DendaController extends Controller
         return response()->json($result);
     }
 
-    public function create(Request $request)
+    public function create(DendaRequest $request)
     {
         $date = Carbon::now();
         $random = Str::random(10);
@@ -63,7 +64,7 @@ class DendaController extends Controller
         $result = DendaModel::where('desa_id', $id)->with('hukum_rerol', 'desa_rerol')->get();
         return response()->json($result);
     }
-    public function update(Request $request)
+    public function update(DendaUpdateRequest $request)
     {
         $date = Carbon::now();
         $data = $request->all();

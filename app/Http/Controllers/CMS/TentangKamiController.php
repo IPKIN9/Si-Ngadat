@@ -21,8 +21,8 @@ class TentangKamiController extends Controller
 
     public function create(TentangKamiRequest $request)
     {
-        $count=TentangKamiModel::count();
-        if ($count >1) {
+        $count = TentangKamiModel::count();
+        if ($count < 1) {
             $date = Carbon::now();
             $data = array(
                 'email' => $request->email,
@@ -34,7 +34,7 @@ class TentangKamiController extends Controller
             );
             DB::table('tentang_kami')->insert($data);
             return redirect()->back()->with('status', 'Data berhasil Tersimpan');
-        }else {
+        } else {
             return redirect()->back()->with('status', 'Data Sudah Tersedia');
         }
     }
